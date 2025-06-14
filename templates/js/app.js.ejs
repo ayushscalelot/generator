@@ -3,12 +3,9 @@ var createError = require('http-errors');
 <% } -%>
 var express = require('express');
 var path = require('path');
-const logger = require('./utilities/logger')
 <% Object.keys(modules).sort().forEach(function (variable) { -%>
 var <%- variable %> = require('<%- modules[variable] %>');
 <% }); -%>
-
-logger('Application starting up...')
 
 <% Object.keys(localModules).sort().forEach(function (variable) { -%>
 var <%- variable %> = require('<%- localModules[variable] %>');
