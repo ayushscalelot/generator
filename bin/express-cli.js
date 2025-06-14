@@ -162,6 +162,18 @@ function createApplication (name, dir, options, done) {
   mkdir(dir, 'routes')
   copyTemplateMulti('js/routes', dir + '/routes', '*.js')
 
+  // Create controller templet
+  mkdir(dir, 'controllers')
+  copyTemplateMulti('controllers', path.join(dir, 'controllers'), '*.js')
+
+  // Create models templet
+  mkdir(dir, 'models')
+  copyTemplateMulti('models', path.join(dir, 'models'), '*.js')
+
+  // Create uitilities templet
+  mkdir(dir, 'utilities')
+  copyTemplateMulti('utilities', path.join(dir, 'utilities'), '*.js')
+
   if (options.view) {
     // Copy view templates
     mkdir(dir, 'views')
